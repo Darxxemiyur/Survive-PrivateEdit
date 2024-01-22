@@ -32,3 +32,9 @@ run/
 *.launch
 /Java Projects/
 /Minecraft Projects/
+
+.directory
+
+.vscode/
+.idea/
+

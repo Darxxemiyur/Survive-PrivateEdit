@@ -58,11 +58,11 @@ public class TooltipEvents {
 	public static void tooltips(ItemTooltipEvent event) {
 		boolean showWeight = false;
 		boolean showTemp = false;
-		if ((Survive.STAMINA_CONFIG.enabled && Survive.STAMINA_CONFIG.enable_weights) || Survive.TEMPERATURE_CONFIG.enabled) {
+		if ((Survive.STAMINA_CONFIG.enabled && Survive.STAMINA_CONFIG.enable_weights) /*| Survive.TEMPERATURE_CONFIG.enabled */) {
 			for(EquipmentSlot type : EquipmentSlot.values()) {
 				if (event.getPlayer() != null && event.getItemStack().canEquip(type, event.getPlayer()) && type.getType() == Type.ARMOR) {
 					showWeight = Survive.STAMINA_CONFIG.enabled && Survive.STAMINA_CONFIG.enable_weights;
-					showTemp = Survive.TEMPERATURE_CONFIG.enabled;
+					/*showTemp = Survive.TEMPERATURE_CONFIG.enabled; */
 					break;
 				}
 			}

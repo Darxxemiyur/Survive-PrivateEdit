@@ -24,13 +24,13 @@ public class SMobEffect extends MobEffect {
 	public void applyEffectTick(LivingEntity entityLivingBaseIn, int amplifier) {
 		if (entityLivingBaseIn instanceof IRealisticEntity) {
 			IRealisticEntity realisticEntity = (IRealisticEntity)entityLivingBaseIn;
-			if (!entityLivingBaseIn.level.isClientSide) {
+			/*if (!entityLivingBaseIn.level.isClientSide) {
 				if (this == SMobEffects.THIRST) {
 					realisticEntity.getWaterData().addExhaustion((Player) entityLivingBaseIn, (0.005F * (float)(amplifier + 1)));
 					realisticEntity.getWaterData().save(entityLivingBaseIn);
 				}
-			}
-			if (this == SMobEffects.DEPRECIATED_HYPOTHERMIA && entityLivingBaseIn instanceof Player) {
+			}*/
+			if /*(this == SMobEffects.DEPRECIATED_HYPOTHERMIA && entityLivingBaseIn instanceof Player) {
 				boolean flag = !entityLivingBaseIn.level.getDifficulty().equals(Difficulty.HARD) && entityLivingBaseIn.getHealth() > 1.0F;
 				if (entityLivingBaseIn.level.getDifficulty().equals(Difficulty.HARD)) flag = true;
 				if ((!((Player)entityLivingBaseIn).isSleeping() || !Survive.TEMPERATURE_CONFIG.hyp_allow_sleep) && flag) {
@@ -42,7 +42,7 @@ public class SMobEffect extends MobEffect {
 				if ((!((Player)entityLivingBaseIn).isSleeping() || !Survive.TEMPERATURE_CONFIG.hyp_allow_sleep) && flag) {
 					entityLivingBaseIn.hurt(SDamageSource.HYPERTHERMIA, 0.4F);
 				}
-			} else if (this == SMobEffects.ENERGIZED && entityLivingBaseIn instanceof ServerPlayer) {
+			} else if */(this == SMobEffects.ENERGIZED && entityLivingBaseIn instanceof ServerPlayer) {
 				StaminaData energyStats = SurviveEntityStats.getEnergyStats(entityLivingBaseIn);
 				energyStats.relax(1, entityLivingBaseIn.getAttributeValue(SAttributes.MAX_STAMINA));
 				energyStats.save(entityLivingBaseIn);

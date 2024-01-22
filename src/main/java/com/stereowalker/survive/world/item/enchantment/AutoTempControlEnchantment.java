@@ -4,15 +4,12 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
-public class AutoTempControlEnchantment extends Enchantment {
+/*public class AutoTempControlEnchantment extends Enchantment {
 
 	public AutoTempControlEnchantment(Rarity rarityIn, EquipmentSlot[] slots) {
 		super(rarityIn, EnchantmentCategory.ARMOR, slots);
 	}
-	
-	/**
-	 * Returns the minimal value of enchantability needed on the enchantment level passed.
-	 */
+	 
 	@Override
 	public int getMinCost(int enchantmentLevel) {
 		return enchantmentLevel * 25;
@@ -27,10 +24,7 @@ public class AutoTempControlEnchantment extends Enchantment {
 	public boolean isTreasureOnly() {
 		return true;
 	}
-
-	/**
-	 * Returns the maximum level that the enchantment can have.
-	 */
+ 
 	@Override
 	public int getMaxLevel() {
 		return 1;
@@ -45,4 +39,4 @@ public class AutoTempControlEnchantment extends Enchantment {
 			return super.checkCompatibility(ench) && ench != SEnchantments.WARMING && ench != SEnchantments.ADJUSTED_COOLING && ench != SEnchantments.COOLING;
 		}
 	}
-}
+}*/

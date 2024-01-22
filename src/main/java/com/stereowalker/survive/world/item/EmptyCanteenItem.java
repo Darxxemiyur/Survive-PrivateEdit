@@ -32,7 +32,7 @@ public class EmptyCanteenItem extends Item {
 	public InteractionResultHolder<ItemStack> use(Level levelIn, Player playerIn, InteractionHand handIn) {
 		ItemStack itemstack = playerIn.getItemInHand(handIn);
 		HitResult hitresult = getPlayerPOVHitResult(levelIn, playerIn, ClipContext.Fluid.SOURCE_ONLY);
-		int i = Survive.THIRST_CONFIG.canteen_fill_amount;
+		/*int i = Survive.THIRST_CONFIG.canteen_fill_amount;
 		if (hitresult.getType() == HitResult.Type.MISS) {
 			return InteractionResultHolder.pass(itemstack);
 		} else {
@@ -41,7 +41,7 @@ public class EmptyCanteenItem extends Item {
 				if (!levelIn.mayInteract(playerIn, blockpos)) {
 					return InteractionResultHolder.pass(itemstack);
 				}
-
+		
 				if (levelIn.getFluidState(blockpos).is(FluidSTags.PURIFIED_WATER)) {
 					//TODO: Replace with canteen fill sounds
 					levelIn.playSound(playerIn, playerIn.getX(), playerIn.getY(), playerIn.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
@@ -55,8 +55,8 @@ public class EmptyCanteenItem extends Item {
 				}
 				return InteractionResultHolder.pass(itemstack);
 			}
-			return InteractionResultHolder.pass(itemstack);
-		}
+		}*/
+		return InteractionResultHolder.pass(itemstack);
 	}
 
 	protected ItemStack turnCanteenIntoItem(ItemStack canteenStack, Player playerIn, ItemStack pFilledBottleStack) {

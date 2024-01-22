@@ -6,7 +6,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.crafting.SimpleCookingSerializer;
-
+/*
 public class WaterBottleCookingSerializer extends SimpleCookingSerializer<WaterBottleSmeltingRecipe> {
    public WaterBottleCookingSerializer(WaterBottleCookingSerializer.CookieBaker<WaterBottleSmeltingRecipe> pFactory, int pDefaultCookingTime) {
 	   super(pFactory, pDefaultCookingTime);
@@ -34,4 +34,4 @@ public class WaterBottleCookingSerializer extends SimpleCookingSerializer<WaterB
       pBuffer.writeFloat(pRecipe.getExperience());
       pBuffer.writeVarInt(pRecipe.getCookingTime());
    }
-}
+}*/

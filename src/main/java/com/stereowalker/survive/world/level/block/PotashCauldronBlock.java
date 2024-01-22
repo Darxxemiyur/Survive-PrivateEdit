@@ -3,7 +3,7 @@ package com.stereowalker.survive.world.level.block;
 import java.util.Random;
 import java.util.function.Predicate;
 
-import com.stereowalker.survive.core.cauldron.SCauldronInteraction;
+//import com.stereowalker.survive.core.cauldron.SCauldronInteraction;
 import com.stereowalker.survive.world.item.HygieneItems;
 
 import net.minecraft.core.BlockPos;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.biome.Biome.Precipitation;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-
+/*
 public class PotashCauldronBlock extends LayeredCauldronBlock {
 
 	public static final Predicate<Biome.Precipitation> NONE = (p_153526_) -> {
@@ -66,3 +66,4 @@ public class PotashCauldronBlock extends LayeredCauldronBlock {
 	}
 
 }
+*/

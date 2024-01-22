@@ -3,21 +3,16 @@ package com.stereowalker.survive;
 import java.util.Random;
 
 import org.apache.commons.lang3.mutable.MutableInt;
-import org.lwjgl.opengl.GL11;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.stereowalker.survive.core.SurviveEntityStats;
-import com.stereowalker.survive.core.TempDisplayMode;
 import com.stereowalker.survive.needs.IRealisticEntity;
 import com.stereowalker.survive.needs.IRoastedEntity;
-import com.stereowalker.survive.needs.NutritionData;
 import com.stereowalker.survive.world.effect.SMobEffects;
 import com.stereowalker.survive.world.entity.ai.attributes.SAttributes;
-import com.stereowalker.unionlib.util.ScreenHelper;
 import com.stereowalker.unionlib.util.ScreenHelper.ScreenOffset;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiComponent;
@@ -42,7 +37,7 @@ public class GuiHelper {
 				GuiHelper.renderTiredOverlay(gui);
 			}
 		});
-		OverlayRegistry.registerOverlayTop("Heat Stroke", (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
+		/*OverlayRegistry.registerOverlayTop("Heat Stroke", (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
 			gui.setupOverlayRenderState(true, false);
 			GuiHelper.renderHeatStroke(gui);
 		});
@@ -62,7 +57,7 @@ public class GuiHelper {
 				renderThirst(gui, mStack, new MutableInt(), left, top, true);
 				gui.right_height += 10;
 			}
-		});
+		});*/
 		OverlayRegistry.registerOverlayAbove(ForgeIngameGui.FOOD_LEVEL_ELEMENT, "Stamina Level", (gui, mStack, partialTicks, screenWidth, screenHeight) -> {
 			boolean isMounted = gui.minecraft.player.getVehicle() instanceof LivingEntity;
 			if (Survive.STAMINA_CONFIG.enabled && !isMounted && !gui.minecraft.options.hideGui && gui.shouldDrawSurvivalElements())
@@ -80,6 +75,9 @@ public class GuiHelper {
 	@SuppressWarnings("resource")
 	@OnlyIn(Dist.CLIENT)
 	public static void renderTemperature(Gui gui, ScreenOffset position, Player playerentity, PoseStack matrixStack, boolean forgeOverlay) {
+		
+		/*
+
 		int x = ScreenHelper.getXOffset(position, gui.minecraft) + Survive.TEMPERATURE_CONFIG.tempXLoc;
 		int y = ScreenHelper.getYOffset(position, gui.minecraft) + Survive.TEMPERATURE_CONFIG.tempYLoc;
 		Minecraft.getInstance().getProfiler().push("temperature");
@@ -109,7 +107,7 @@ public class GuiHelper {
 		//For Numbers
 		int temp = (int) (rawTemperature*100);
 		double temperaure = ((double)temp) / 100.0D;
-		String s = temperaure+" °C";
+		String s = temperaure+" ï¿½C";
 		if (Minecraft.getInstance().gameMode.hasExperience()) {
 			if (Survive.TEMPERATURE_CONFIG.tempDisplayMode.equals(TempDisplayMode.HORIZONTAL_BAR)) {
 				if (Survive.TEMPERATURE_CONFIG.tempEffects && displayTemp >= 1) {//Hyperthermia override
@@ -138,7 +136,7 @@ public class GuiHelper {
 					double rawFTemp = (temperaure * (9.0D/5.0D)) + 32.0D;
 					int fTemp = (int) (rawFTemp*100);
 					double fTemperaure = ((double)fTemp) / 100.0D;
-					s = fTemperaure+" °F";
+					s = fTemperaure+" ï¿½F";
 				}
 				if (displayTemp >= 1) {
 					Minecraft.getInstance().font.drawShadow(matrixStack, s, x, y, ChatFormatting.GOLD.getColor());
@@ -161,9 +159,10 @@ public class GuiHelper {
 			RenderSystem.enableBlend();
 			RenderSystem.blendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
 		}
+		*/
 	}
 
-	@OnlyIn(Dist.CLIENT)
+	/*@OnlyIn(Dist.CLIENT)
 	public static void renderThirst(Gui gui, PoseStack matrixStack, MutableInt moveUp, int j1, int k1, boolean forgeOverlay) {
 		Player player = (Player)gui.minecraft.getCameraEntity();
 		IRealisticEntity realisticPlayer = (IRealisticEntity)player;
@@ -184,7 +183,7 @@ public class GuiHelper {
 
 			if (realisticPlayer.getWaterData().getHydrationLevel() <= 0.0F && gui.tickCount % (waterL * 3 + 1) == 0) {
 				i7 = k1 + (gui.random.nextInt(3) - 1);
-			}
+			} 
 
 			int k8 = j1 - k6 * 8 - 9;
 			gui.blit(matrixStack, k8, i7 - moveUp.getValue(), 16 + i8 * 9, 54, 9, 9);
@@ -202,7 +201,7 @@ public class GuiHelper {
 			RenderSystem.setShader(GameRenderer::getPositionTexShader);
 			RenderSystem.setShaderTexture(0, GuiComponent.GUI_ICONS_LOCATION);
 		}
-	}
+	}*/
 
 	@OnlyIn(Dist.CLIENT)
 	public static void renderEnergyBars(Gui gui, PoseStack matrixStack, MutableInt moveUp, int j1, int k1, boolean forgeOverlay) {

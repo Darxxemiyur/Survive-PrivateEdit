@@ -1,6 +1,6 @@
 package com.stereowalker.survive.world.level.block;
 
-import com.stereowalker.survive.core.cauldron.SCauldronInteraction;
+//import com.stereowalker.survive.core.cauldron.SCauldronInteraction;
 import com.stereowalker.survive.world.level.material.SFluids;
 import com.stereowalker.unionlib.core.registries.RegistryHolder;
 import com.stereowalker.unionlib.core.registries.RegistryObject;
@@ -14,12 +14,12 @@ import net.minecraft.world.level.material.Material;
 
 @RegistryHolder(registry = Block.class)
 public class SBlocks {
-	@RegistryObject("purified_water")
-	public static final Block PURIFIED_WATER = new LiquidBlock(() -> SFluids.PURIFIED_WATER, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noDrops());
-	@RegistryObject("purified_water_cauldron")
-	public static final Block PURIFIED_WATER_CAULDRON = new LayeredCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON), PotashCauldronBlock.NONE, SCauldronInteraction.PURIFIED_WATER);
-	@RegistryObject("potash_cauldron")
-	public static final Block POTASH_CAULDRON = new PotashCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON));
+	//@RegistryObject("purified_water")
+	//public static final Block PURIFIED_WATER = new LiquidBlock(() -> SFluids.PURIFIED_WATER, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noDrops());
+	/*@RegistryObject("purified_water_cauldron")
+	public static final Block PURIFIED_WATER_CAULDRON = new LayeredCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON), PotashCauldronBlock.NONE, SCauldronInteraction.PURIFIED_WATER);*/
+	//@RegistryObject("potash_cauldron")
+	//public static final Block POTASH_CAULDRON = new PotashCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON));
 	@RegistryObject("temperature_regulator")
 	public static final Block TEMPERATURE_REGULATOR = new TemperatureRegulatorBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.5F).noOcclusion());
 	@RegistryObject("plated_temperature_regulator")

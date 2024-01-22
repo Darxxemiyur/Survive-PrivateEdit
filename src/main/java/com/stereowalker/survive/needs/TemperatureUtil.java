@@ -13,7 +13,7 @@ import net.minecraft.world.level.levelgen.LegacyRandomSource;
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 
-public class TemperatureUtil {
+/*public class TemperatureUtil {
 	public static double firstHeat(Player player) {
 		return Survive.DEFAULT_TEMP + (player.getAttributeValue(SAttributes.HEAT_RESISTANCE) * 1.0D);
 	}
@@ -42,10 +42,7 @@ public class TemperatureUtil {
 
 	private static final PerlinSimplexNoise TEMPERATURE_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(1234L)), ImmutableList.of(0));
 	   
-	/**
-	 * Gets the current temperature at the given location, based off of the default for this biome, the elevation of the
-	 * position, and {@linkplain #Biome#TEMPERATURE_NOISE} some random perlin noise. Although this is a heavily modified version to account for altitude
-	 */
+	  
 	public static float getTemperature(Biome biome, BlockPos pos) {
 		float f = (float)(TEMPERATURE_NOISE.getValue((double)((float)pos.getX() / 8.0F), (double)((float)pos.getZ() / 8.0F), false) * 4.0D);
 		float modifier = 1.0f;
@@ -62,4 +59,4 @@ public class TemperatureUtil {
 		return t - modifier*((f + (float)pos.getY() - 64.0F) * 0.05F / 3.75F);
 	}
 
-}
+} */

@@ -5,7 +5,7 @@ import com.stereowalker.survive.world.temperature.TemperatureModifier.Contributi
 import java.util.Map.Entry;
 
 import com.stereowalker.survive.world.item.SItems;
-import com.stereowalker.survive.world.temperature.TemperatureQuery;
+//import com.stereowalker.survive.world.temperature.TemperatureQuery;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.entity.Entity;
 
-public class SItemProperties {
+public class SItemProperties {/*
 	public static void registerAll() {
 		ItemProperties.register(SItems.THERMOMETER, new ResourceLocation("temperature"), (stack, level, livingentity, count) -> {
 			Entity entity = (Entity)(livingentity != null ? livingentity : stack.getEntityRepresentation());
@@ -59,5 +59,5 @@ public class SItemProperties {
 				}
 			}
 		});
-	}
+	} */
 }

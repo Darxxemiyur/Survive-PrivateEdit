@@ -43,7 +43,7 @@ public abstract class LayeredCauldronBlockMixin extends AbstractCauldronBlock {
 	}
 	
 	public void heatOrCoolCauldron(BlockState pState, Level pLevel, BlockPos cauldronPos) {
-		if (pState.getBlock() == Blocks.WATER_CAULDRON && 
+		/*if (pState.getBlock() == Blocks.WATER_CAULDRON && 
 				pLevel.getBlockState(cauldronPos.below()).getBlock() instanceof CampfireBlock && 
 				pLevel.getBlockState(cauldronPos.below()).getValue(CampfireBlock.LIT)) {
 			pLevel.setBlockAndUpdate(cauldronPos, SBlocks.PURIFIED_WATER_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, pState.getValue(LayeredCauldronBlock.LEVEL)));
@@ -52,7 +52,7 @@ public abstract class LayeredCauldronBlockMixin extends AbstractCauldronBlock {
 				pState.getBlock() == SBlocks.PURIFIED_WATER_CAULDRON && 
 				(!(pLevel.getBlockState(cauldronPos.below()).getBlock() instanceof CampfireBlock) || !pLevel.getBlockState(cauldronPos.below()).getValue(CampfireBlock.LIT))) {
 			pLevel.setBlockAndUpdate(cauldronPos,Blocks.WATER_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, pState.getValue(LayeredCauldronBlock.LEVEL)));
-		}
+		}*/
 	}
 
 }

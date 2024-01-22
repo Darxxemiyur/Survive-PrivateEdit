@@ -2,7 +2,6 @@ package com.stereowalker.survive.core.cauldron;
 
 import java.util.Map;
 
-import com.stereowalker.survive.world.item.CanteenItem;
 import com.stereowalker.survive.world.item.HygieneItems;
 import com.stereowalker.survive.world.item.SItems;
 import com.stereowalker.survive.world.item.alchemy.SPotions;
@@ -27,8 +26,9 @@ import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 
+/*
 public interface SCauldronInteraction extends CauldronInteraction {
-	public static Map<Item, CauldronInteraction> POTASH = CauldronInteraction.newInteractionMap();
+	/*public static Map<Item, CauldronInteraction> POTASH = CauldronInteraction.newInteractionMap();
 	public static Map<Item, CauldronInteraction> PURIFIED_WATER = CauldronInteraction.newInteractionMap();
 
 	CauldronInteraction FILL_PURIFIED_WATER = (p_175683_, p_175684_, p_175685_, p_175686_, p_175687_, p_175688_) -> {
@@ -40,7 +40,8 @@ public interface SCauldronInteraction extends CauldronInteraction {
 	}
 
 	public static void bootStrap() {
-		CauldronInteraction.addDefaultInteractions(POTASH);
+		CauldronInteraction.addDefaultInteractions(WATER);
+		/*CauldronInteraction.addDefaultInteractions(POTASH);
 		CauldronInteraction.addDefaultInteractions(PURIFIED_WATER);
 
 		addSurviveDefaultInteractions(POTASH);
@@ -48,9 +49,9 @@ public interface SCauldronInteraction extends CauldronInteraction {
 		addSurviveDefaultInteractions(EMPTY);
 		addSurviveDefaultInteractions(LAVA);
 		addSurviveDefaultInteractions(POWDER_SNOW);
-		addSurviveDefaultInteractions(WATER);
+		addSurviveDefaultInteractions(WATER);*/
 
-		PURIFIED_WATER.put(Items.BUCKET, (p_175725_, p_175726_, p_175727_, p_175728_, p_175729_, p_175730_) -> {
+		/*PURIFIED_WATER.put(Items.BUCKET, (p_175725_, p_175726_, p_175727_, p_175728_, p_175729_, p_175730_) -> {
 			return CauldronInteraction.fillBucket(p_175725_, p_175726_, p_175727_, p_175728_, p_175729_, p_175730_, new ItemStack(SItems.PURIFIED_WATER_BUCKET), (p_175660_) -> {
 				return p_175660_.getValue(LayeredCauldronBlock.LEVEL) == 3;
 			}, SoundEvents.BUCKET_FILL);
@@ -106,7 +107,6 @@ public interface SCauldronInteraction extends CauldronInteraction {
 				return InteractionResult.sidedSuccess(level.isClientSide);
 			}
 		});
-
 		//Canteen Interactions
 		WATER.put(SItems.CANTEEN, (blockstate, level, pos, player, interactionHand, p_175723_) -> {
 			if (!level.isClientSide) {
@@ -115,7 +115,7 @@ public interface SCauldronInteraction extends CauldronInteraction {
 				player.awardStat(Stats.USE_CAULDRON);
 				player.awardStat(Stats.ITEM_USED.get(item));
 				level.setBlockAndUpdate(pos, Blocks.CAULDRON.defaultBlockState());
-				level.playSound((Player)null, pos, SoundEvents.BOTTLE_FILL/*TODO: Setup canteen fill sound*/, SoundSource.BLOCKS, 1.0F, 1.0F);
+				level.playSound((Player)null, pos, SoundEvents.BOTTLE_FILL , SoundSource.BLOCKS, 1.0F, 1.0F);
 				level.gameEvent((Entity)null, GameEvent.FLUID_PICKUP, pos);
 			}
 
@@ -129,13 +129,13 @@ public interface SCauldronInteraction extends CauldronInteraction {
 				player.awardStat(Stats.USE_CAULDRON);
 				player.awardStat(Stats.ITEM_USED.get(item));
 				level.setBlockAndUpdate(pos, Blocks.CAULDRON.defaultBlockState());
-				level.playSound((Player)null, pos, SoundEvents.BOTTLE_FILL/*TODO: Setup canteen fill sound*/, SoundSource.BLOCKS, 1.0F, 1.0F);
+				level.playSound((Player)null, pos, SoundEvents.BOTTLE_FILL , SoundSource.BLOCKS, 1.0F, 1.0F);
 				level.gameEvent((Entity)null, GameEvent.FLUID_PICKUP, pos);
 			}
 
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		});
-
+		
 		EMPTY.put(SItems.FILLED_CANTEEN, (blockstate, level, pos, player, interactionHand, p_175737_) -> {
 			if (PotionUtils.getPotion(p_175737_) != Potions.WATER && PotionUtils.getPotion(p_175737_) != SPotions.PURIFIED_WATER) {
 				return InteractionResult.PASS;
@@ -162,7 +162,6 @@ public interface SCauldronInteraction extends CauldronInteraction {
 			}
 		});
 	}
-
 	public static void takeFromCauldron(Map<Item, CauldronInteraction> interaction, Item requiredItem, ItemStack output, SoundEvent fillSound){
 		interaction.put(requiredItem, (blockstate, level, pos, player, interactionHand, p_175723_) -> {
 			if (!level.isClientSide) {
@@ -171,7 +170,7 @@ public interface SCauldronInteraction extends CauldronInteraction {
 				player.awardStat(Stats.USE_CAULDRON);
 				player.awardStat(Stats.ITEM_USED.get(item));
 				LayeredCauldronBlock.lowerFillLevel(blockstate, level, pos);
-				level.playSound((Player)null, pos, fillSound/*TODO: Setup bowl fill sound*/, SoundSource.BLOCKS, 1.0F, 1.0F);
+				level.playSound((Player)null, pos, fillSound, SoundSource.BLOCKS, 1.0F, 1.0F);
 				level.gameEvent((Entity)null, GameEvent.FLUID_PICKUP, pos);
 			}
 
@@ -187,7 +186,7 @@ public interface SCauldronInteraction extends CauldronInteraction {
 					player.awardStat(Stats.USE_CAULDRON);
 					player.awardStat(Stats.ITEM_USED.get(p_175709_.getItem()));
 					level.setBlockAndUpdate(pos, blockstate.cycle(LayeredCauldronBlock.LEVEL));
-					level.playSound((Player)null, pos, emptySound/*TODO: Setup bowl empty sound*/, SoundSource.BLOCKS, 1.0F, 1.0F);
+					level.playSound((Player)null, pos, emptySound, SoundSource.BLOCKS, 1.0F, 1.0F);
 					level.gameEvent((Entity)null, GameEvent.FLUID_PLACE, pos);
 				}
 
@@ -214,3 +213,4 @@ public interface SCauldronInteraction extends CauldronInteraction {
 		});
 	}
 }
+*/

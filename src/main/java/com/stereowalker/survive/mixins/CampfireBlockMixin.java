@@ -25,23 +25,11 @@ public abstract class CampfireBlockMixin extends BaseEntityBlock implements Simp
 	}
 
 	@Inject(method = "onRemove", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getBlockEntity(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;"))
-	public void onUnpurifyWater(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving, CallbackInfo info) {
-		if (!pLevel.isClientSide && ServerConfig.purifiedCauldronRevert) {
-			if (pLevel.getBlockState(pPos.above()).getBlock() == SBlocks.PURIFIED_WATER_CAULDRON) {
-				BlockState old = pLevel.getBlockState(pPos.above());
-				pLevel.setBlockAndUpdate(pPos.above(), Blocks.WATER_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, old.getValue(LayeredCauldronBlock.LEVEL)));
-			}
-		}
+	public void onUnpurifyWater(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving, CallbackInfo info) { 
 	}
 	
 	@Override
-	public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
-		if (!pLevel.isClientSide) {
-			if (pLevel.getBlockState(pPos.above()).getBlock() == Blocks.WATER_CAULDRON) {
-				BlockState old = pLevel.getBlockState(pPos.above());
-				pLevel.setBlockAndUpdate(pPos.above(), SBlocks.PURIFIED_WATER_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, old.getValue(LayeredCauldronBlock.LEVEL)));
-			}
-		}
+	public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) { 
 		super.onPlace(pState, pLevel, pPos, pOldState, pIsMoving);
 	}
 

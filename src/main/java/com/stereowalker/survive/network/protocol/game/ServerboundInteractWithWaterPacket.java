@@ -2,7 +2,7 @@ package com.stereowalker.survive.network.protocol.game;
 
 import com.stereowalker.survive.Survive;
 import com.stereowalker.survive.needs.IRealisticEntity;
-import com.stereowalker.survive.needs.WaterData;
+//import com.stereowalker.survive.needs.WaterData;
 import com.stereowalker.survive.world.item.SItems;
 import com.stereowalker.unionlib.network.protocol.game.ServerboundUnionPacket;
 
@@ -65,13 +65,13 @@ public class ServerboundInteractWithWaterPacket extends ServerboundUnionPacket {
 	}
 	
 	public static boolean shouldRemoveSource(FluidState fluid) {
-		if ((!(fluid.getType() instanceof WaterFluid) || Survive.THIRST_CONFIG.shouldRemoveSourceWaterBlock) && fluid.isSource()) return true;
+		if ((!(fluid.getType() instanceof WaterFluid) /*|| Survive.THIRST_CONFIG.shouldRemoveSourceWaterBlock*/) && fluid.isSource()) return true; 
 		return false;
 	}
 
 	@Override
 	public boolean handleOnServer(ServerPlayer sender) {
-		if (Survive.THIRST_CONFIG.enabled) {
+		/*if (Survive.THIRST_CONFIG.enabled) {
 			final ItemStack heldItem = sender.getItemInHand(hand);
 			BlockState block = sender.level.getBlockState(pos);
 			FluidState fluid = sender.level.getFluidState(pos);
@@ -92,7 +92,7 @@ public class ServerboundInteractWithWaterPacket extends ServerboundUnionPacket {
 							flag = true;
 						}
 						if (flag) {
-							waterStats.drink((int) waterAmount, (float) hydrationAmount, WaterData.applyThirst(sender, addThirst/*TODO MAKE BIOMES HAVE DIFFERENT THIRST CHANCES*/));
+							waterStats.drink((int) waterAmount, (float) hydrationAmount, WaterData.applyThirst(sender, addThirst));
 						}
 						Survive.getInstance().channel.sendTo(new ClientboundDrinkSoundPacket(pos, sender.getUUID()), sender.connection.getConnection(), NetworkDirection.PLAY_TO_CLIENT);
 					}
@@ -105,7 +105,7 @@ public class ServerboundInteractWithWaterPacket extends ServerboundUnionPacket {
 					else sender.addItem(new ItemStack(SItems.PURIFIED_WATER_BOWL));
 				}
 			}
-		}
+		} */
 		return true;
 	}
 

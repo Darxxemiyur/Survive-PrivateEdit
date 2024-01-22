@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
-public class PurifiedWaterCraftingRecipe extends NoRemainderShaplessRecipe {
+/*public class PurifiedWaterCraftingRecipe extends NoRemainderShaplessRecipe {
 
 	public PurifiedWaterCraftingRecipe(ResourceLocation pId, String pGroup, ItemStack pResult, NonNullList<Ingredient> pIngredients) {
 		super(pId, pGroup, pResult, pIngredients);
@@ -19,4 +19,4 @@ public class PurifiedWaterCraftingRecipe extends NoRemainderShaplessRecipe {
 		return SRecipeSerializer.CRAFTING_SHAPELESS_WITH_PURIFIED_WATER;
 	}
 
-}
+}*/

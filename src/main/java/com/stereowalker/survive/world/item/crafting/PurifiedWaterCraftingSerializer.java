@@ -15,7 +15,7 @@ import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
-
+/*
 public class PurifiedWaterCraftingSerializer extends net.minecraftforge.registries.ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<PurifiedWaterCraftingRecipe> {
     static int MAX_WIDTH = 3;
     static int MAX_HEIGHT = 3;
@@ -84,3 +84,4 @@ public class PurifiedWaterCraftingSerializer extends net.minecraftforge.registri
 		}
 	}
  }
+ */

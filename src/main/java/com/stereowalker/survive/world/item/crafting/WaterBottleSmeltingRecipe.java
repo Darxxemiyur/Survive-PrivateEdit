@@ -12,7 +12,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.Level;
-
+/* 
 public class WaterBottleSmeltingRecipe extends SmeltingRecipe {
 
 	public WaterBottleSmeltingRecipe(ResourceLocation pId, String pGroup, Ingredient pIngredient, ItemStack pResult, float pExperience, int pCookingTime) {
@@ -30,3 +30,4 @@ public class WaterBottleSmeltingRecipe extends SmeltingRecipe {
 	}
 
 }
+*/

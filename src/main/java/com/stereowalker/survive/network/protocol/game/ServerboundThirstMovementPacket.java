@@ -35,7 +35,7 @@ public class ServerboundThirstMovementPacket extends ServerboundUnionPacket {
 
 	@Override
 	public boolean handleOnServer(ServerPlayer sender) {
-		if (Survive.THIRST_CONFIG.enabled) {
+		/*if (Survive.THIRST_CONFIG.enabled) {
 			int movM = (int) ((moveS+moveF)*10);
 			float moveMul;
 			if (movM > 0)
@@ -50,7 +50,7 @@ public class ServerboundThirstMovementPacket extends ServerboundUnionPacket {
 			if (jump)
 				moveMul+=1.5F;
 			((IRealisticEntity)sender).getWaterData().addExhaustion(sender, 0.1F*moveMul);
-		}
+		}*/
 		return true;
 	}
 }

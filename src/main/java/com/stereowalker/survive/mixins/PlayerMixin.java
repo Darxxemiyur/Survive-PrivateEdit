@@ -18,9 +18,9 @@ import com.stereowalker.survive.needs.IRealisticEntity;
 import com.stereowalker.survive.needs.NutritionData;
 import com.stereowalker.survive.needs.SleepData;
 import com.stereowalker.survive.needs.StaminaData;
-import com.stereowalker.survive.needs.TemperatureData;
+/*import com.stereowalker.survive.needs.TemperatureData;
 import com.stereowalker.survive.needs.WaterData;
-import com.stereowalker.survive.needs.WellbeingData;
+import com.stereowalker.survive.needs.WellbeingData;*/
 import com.stereowalker.survive.world.DataMaps;
 
 import net.minecraft.server.level.ServerPlayer;
@@ -52,13 +52,13 @@ public abstract class PlayerMixin extends LivingEntity implements IRealisticEnti
 	@Inject(method = "eat", at = @At("HEAD"))
 	public void eatInject(Level pLevel, ItemStack pFood, CallbackInfoReturnable<ItemStack> cir) {
 		this.getStaminaData().eat(pFood.getItem(), pFood, this);
-		this.getWaterData().drink(pFood.getItem(), pFood, this);
+		/*this.getWaterData().drink(pFood.getItem(), pFood, this);*/
 	}
 
 	@Inject(method = "tick", at = @At(value = "INVOKE", shift = Shift.AFTER, target = "Lnet/minecraft/world/entity/player/Player;updateIsUnderwater()Z"))
 	public void tickInject(CallbackInfo ci) {
 		SurviveEntityStats.addStatsOnSpawn((Player)(Object)this);
-		//
+		/*
 		if (!this.level.isClientSide && (Player)(Object)this instanceof ServerPlayer) {
 			ServerPlayer player = (ServerPlayer)(Object)this;
 			if (Survive.THIRST_CONFIG.enabled) {
@@ -68,16 +68,16 @@ public abstract class PlayerMixin extends LivingEntity implements IRealisticEnti
 					}
 				}
 				getWaterData().save(player);
-			}
-		}
+			} 
+		}*/
 		//
 		if (!this.level.isClientSide) {
 			getStaminaData().baseTick((Player)(Object)this);
 			getHygieneData().baseTick((Player)(Object)this);
 			getNutritionData().baseTick((Player)(Object)this);
-			getTemperatureData().baseTick((Player)(Object)this);
-			getWaterData().baseTick((Player)(Object)this);
-			getWellbeingData().baseTick((Player)(Object)this);
+			/*getTemperatureData().baseTick((Player)(Object)this);
+			getWellbeingData().baseTick((Player)(Object)this); 
+			getWaterData().baseTick((Player)(Object)this);*/
 			getSleepData().baseTick((Player)(Object)this);
 		}
 	}
@@ -150,17 +150,17 @@ public abstract class PlayerMixin extends LivingEntity implements IRealisticEnti
 		return SurviveEntityStats.getNutritionStats((Player)(Object)this);
 	}
 
-	public TemperatureData getTemperatureData(){
+	/*public TemperatureData getTemperatureData(){
 		return SurviveEntityStats.getTemperatureStats((Player)(Object)this);
-	}
+	} */
 
-	public WaterData getWaterData(){
+	/*public WaterData getWaterData(){
 		return SurviveEntityStats.getWaterStats((Player)(Object)this);
-	}
+	}*/
 
-	public WellbeingData getWellbeingData(){
+	/*public WellbeingData getWellbeingData(){
 		return SurviveEntityStats.getWellbeingStats((Player)(Object)this);
-	}
+	} */
 
 	public SleepData getSleepData(){
 		return SurviveEntityStats.getSleepStats((Player)(Object)this);

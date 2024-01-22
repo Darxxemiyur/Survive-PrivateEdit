@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
  * DO NOT use the player to check the level loaded or the position of the player as I would not 
  * be passing those variables as arguments if I wanted you to do that
  * @author Stereowalker
- */
+ 
 @FunctionalInterface
 public interface TemperatureQuery {
 	public static Map<ResourceLocation,Tuple<TemperatureQuery, ContributingFactor>> queries = Maps.newHashMap();
@@ -30,3 +30,4 @@ public interface TemperatureQuery {
 	
 	double run(@Nullable Player player, double temp, Level level, BlockPos pos);
 }
+*/

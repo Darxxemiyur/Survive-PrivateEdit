@@ -5,9 +5,9 @@ import com.stereowalker.survive.needs.HygieneData;
 import com.stereowalker.survive.needs.NutritionData;
 import com.stereowalker.survive.needs.SleepData;
 import com.stereowalker.survive.needs.StaminaData;
-import com.stereowalker.survive.needs.TemperatureData;
+/*import com.stereowalker.survive.needs.TemperatureData;
 import com.stereowalker.survive.needs.WaterData;
-import com.stereowalker.survive.needs.WellbeingData;
+import com.stereowalker.survive.needs.WellbeingData; */
 import com.stereowalker.survive.world.entity.ai.attributes.SAttributes;
 
 import net.minecraft.nbt.CompoundTag;
@@ -17,15 +17,15 @@ import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.player.Player;
 
 public class SurviveEntityStats {
-	public static String waterStatsID = "WaterStats";
+	/*public static String waterStatsID = "WaterStats";
 	public static String temperatureStatsID = "TemperatureStats";
+	public static String wellbeingStatsID = "WellbeingStats"; */
 	public static String energyStatsID = "EnergyStats";
 	public static String hygieneStatsID = "HygieneStats";
 	public static String nutritionStatsID = "NutritionStats";
-	public static String wellbeingStatsID = "WellbeingStats";
 	public static String sleepStatsID = "SleepStats";
 	//Getters
-
+/* 
 	public static WaterData getWaterStats(LivingEntity entity) {
 		WaterData stats = new WaterData();
 		if(entity != null) {
@@ -35,7 +35,7 @@ public class SurviveEntityStats {
 		}
 		return stats;
 	}
-	
+	*/
 	public static StaminaData getEnergyStats(LivingEntity entity) {
 		try {
 			double max_stamina = entity.getAttributeValue(SAttributes.MAX_STAMINA);
@@ -50,7 +50,7 @@ public class SurviveEntityStats {
 			return null;
 		}
 	}
-	
+	/*
 	public static TemperatureData getTemperatureStats(LivingEntity entity) {
 		TemperatureData stats = new TemperatureData();
 		if(entity != null) {
@@ -60,7 +60,7 @@ public class SurviveEntityStats {
 		}
 		return stats;
 	}
-	
+	*/
 	public static HygieneData getHygieneStats(LivingEntity entity) {
 		HygieneData stats = new HygieneData();
 		if(entity != null) {
@@ -81,7 +81,7 @@ public class SurviveEntityStats {
 		return stats;
 	}
 	
-	public static WellbeingData getWellbeingStats(LivingEntity entity) {
+	/*public static WellbeingData getWellbeingStats(LivingEntity entity) {
 		WellbeingData stats = new WellbeingData();
 		if(entity != null) {
 			if (getModNBT(entity) != null && getModNBT(entity).contains(wellbeingStatsID, 10)) {
@@ -89,7 +89,7 @@ public class SurviveEntityStats {
 			}
 		}
 		return stats;
-	}
+	} */
 	
 	public static SleepData getSleepStats(LivingEntity entity) {
 		SleepData stats = new SleepData();
@@ -109,12 +109,12 @@ public class SurviveEntityStats {
 	}
 
 	//Setters
-
+/* 
 	public static void setWaterStats(LivingEntity entity, WaterData waterStats) {
 		CompoundTag compound2 = new CompoundTag();
 		waterStats.write(compound2);
 		getModNBT(entity).put(waterStatsID, compound2);
-	}
+	}*/
 	
 	public static void setStaminaStats(LivingEntity entity, StaminaData energyStats) {
 		CompoundTag compound2 = new CompoundTag();
@@ -122,11 +122,11 @@ public class SurviveEntityStats {
 		getModNBT(entity).put(energyStatsID, compound2);
 	}
 	
-	public static void setTemperatureStats(Entity entity, TemperatureData temperatureStats) {
+	/*public static void setTemperatureStats(Entity entity, TemperatureData temperatureStats) {
 		CompoundTag compound2 = new CompoundTag();
 		temperatureStats.write(compound2);
 		getModNBT(entity).put(temperatureStatsID, compound2);
-	}
+	} */
 	
 	public static void setHygieneStats(LivingEntity entity, HygieneData hygieneStats) {
 		CompoundTag compound2 = new CompoundTag();
@@ -139,12 +139,13 @@ public class SurviveEntityStats {
 		nutritionStats.write(compound2);
 		getModNBT(entity).put(nutritionStatsID, compound2);
 	}
-	
+	/*  
 	public static void setWellbeingStats(LivingEntity entity, WellbeingData wellbeingStats) {
 		CompoundTag compound2 = new CompoundTag();
 		wellbeingStats.write(compound2);
 		getModNBT(entity).put(wellbeingStatsID, compound2);
-	}
+
+	}  */
 	
 	public static void setSleepStats(LivingEntity entity, SleepData sleepStats) {
 		CompoundTag compound2 = new CompoundTag();
@@ -175,10 +176,10 @@ public class SurviveEntityStats {
 		if (frame != null) {
 			CompoundTag compound;
 			compound = getOrCreateModNBT(frame);
-			if(frame.isAlive()) {
+			if(frame.isAlive()) {/*
 				if (!compound.contains(temperatureStatsID)) {
 					setTemperatureStats(frame, new TemperatureData());
-				}
+				} */
 			}
 		}
 	}
@@ -189,23 +190,23 @@ public class SurviveEntityStats {
 			compound = getOrCreateModNBT(player);
 			String name = player.getScoreboardName();
 			if(player.isAlive()) {
-				if (!compound.contains(waterStatsID)) {
+				/*if (!compound.contains(waterStatsID)) {
 					setWaterStats(player, new WaterData());
-				}
-				if (!compound.contains(energyStatsID)) {
-					setStaminaStats(player, new StaminaData(player.getAttributeValue(SAttributes.MAX_STAMINA)));
 				}
 				if (!compound.contains(temperatureStatsID)) {
 					setTemperatureStats(player, new TemperatureData());
+				} 
+				if (!compound.contains(wellbeingStatsID)) {
+					setWellbeingStats(player, new WellbeingData());
+				}*/
+				if (!compound.contains(energyStatsID)) {
+					setStaminaStats(player, new StaminaData(player.getAttributeValue(SAttributes.MAX_STAMINA)));
 				}
 				if (!compound.contains(hygieneStatsID)) {
 					setHygieneStats(player, new HygieneData());
 				}
 				if (!compound.contains(nutritionStatsID)) {
 					setNutritionStats(player, new NutritionData());
-				}
-				if (!compound.contains(wellbeingStatsID)) {
-					setWellbeingStats(player, new WellbeingData());
 				}
 				if (!compound.contains(sleepStatsID)) {
 					setSleepStats(player, new SleepData());

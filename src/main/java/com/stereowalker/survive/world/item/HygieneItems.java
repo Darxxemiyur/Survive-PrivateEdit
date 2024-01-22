@@ -10,6 +10,7 @@ import net.minecraft.world.item.BoneMealItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
+
 @RegistryHolder(registry = Item.class)
 public class HygieneItems {
 	@RegistryObject("bath_sponge")

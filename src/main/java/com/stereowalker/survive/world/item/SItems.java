@@ -29,12 +29,12 @@ public class SItems {
 	public static final Item SUGAR_WATER_BOTTLE = new WaterBottleItem(new Item.Properties().tab(SCreativeModeTab.TAB_MAIN).stacksTo(1));
 	@RegistryObject("canteen")
 	public static final Item CANTEEN = new EmptyCanteenItem(new Item.Properties().tab(SCreativeModeTab.TAB_MAIN).stacksTo(1));
-	@RegistryObject("filled_canteen")
-	public static final Item FILLED_CANTEEN = new CanteenItem(new Item.Properties().craftRemainder(CANTEEN).stacksTo(1).tab(SCreativeModeTab.TAB_MAIN));
+	//@RegistryObject("filled_canteen")
+	//public static final Item FILLED_CANTEEN = new CanteenItem(new Item.Properties().craftRemainder(CANTEEN).stacksTo(1).tab(SCreativeModeTab.TAB_MAIN));
 	@RegistryObject("water_bowl")
 	public static final Item WATER_BOWL = new WaterBowlItem(new Item.Properties().tab(SCreativeModeTab.TAB_MAIN).stacksTo(1));
-	@RegistryObject("purified_water_bowl")
-	public static final Item PURIFIED_WATER_BOWL = new WaterBowlItem(new Item.Properties().tab(SCreativeModeTab.TAB_MAIN).stacksTo(1));
+	//@RegistryObject("purified_water_bowl")
+	//public static final Item PURIFIED_WATER_BOWL = new WaterBowlItem(new Item.Properties().tab(SCreativeModeTab.TAB_MAIN).stacksTo(1));
 	@RegistryObject("ice_cube")
 	public static final Item ICE_CUBE = new Item(new Item.Properties().tab(SCreativeModeTab.TAB_MAIN));
 	@RegistryObject("thermometer")
@@ -67,8 +67,8 @@ public class SItems {
 	public static final Item SMALL_COOLING_PLATE = new TemperatureRegulatorPlateItem(TempRegulationPlateType.CHILLER, TempRegulationPlateSize.SMALL, new Item.Properties().tab(SCreativeModeTab.TAB_MAIN).stacksTo(64));
 	@RegistryObject("charcoal_filter")
 	public static final Item CHARCOAL_FILTER = new Item(new Item.Properties().tab(SCreativeModeTab.TAB_MAIN).defaultDurability(10));
-	@RegistryObject("purified_water_bucket")
-	public static final Item PURIFIED_WATER_BUCKET = new BucketItem(() -> SFluids.PURIFIED_WATER, (new Item.Properties()).craftRemainder(Items.BUCKET).stacksTo(1).tab(SCreativeModeTab.TAB_MAIN));
+	//@RegistryObject("purified_water_bucket")
+	//public static final Item PURIFIED_WATER_BUCKET = new BucketItem(() -> SFluids.PURIFIED_WATER, (new Item.Properties()).craftRemainder(Items.BUCKET).stacksTo(1).tab(SCreativeModeTab.TAB_MAIN));
 	@RegistryObject("magma_paste")
 	public static final Item MAGMA_PASTE = new Item(new Item.Properties().tab(SCreativeModeTab.TAB_MAIN));
 	@RegistryObject("stiffened_honey")

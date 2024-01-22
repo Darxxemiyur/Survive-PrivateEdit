@@ -39,6 +39,7 @@ public class StaminaData extends SurviveData {
 	@SuppressWarnings("unused")
 	private int prevEnergyLevel;
 	private int maxStamina;
+	private final int energyToRegen = 1;
 
 	public StaminaData(double maxStamina) {
 		this.energyReserveLevel = 6;
@@ -96,7 +97,6 @@ public class StaminaData extends SurviveData {
 		}
 		
 		Difficulty difficulty = player.level.getDifficulty();
-		int energyToRegen = 1 + (player.hasEffect(SMobEffects.WELL_FED) ? new Random().nextInt(2) : 0);
 		this.prevEnergyLevel = this.energyLevel;
 		if (this.energyExhaustionLevel > 10.0F) {
 			this.energyExhaustionLevel -= 10.0F;

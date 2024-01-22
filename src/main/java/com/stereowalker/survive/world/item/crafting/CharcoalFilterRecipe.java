@@ -2,7 +2,7 @@ package com.stereowalker.survive.world.item.crafting;
 
 import java.util.Random;
 
-import com.stereowalker.survive.world.item.CanteenItem;
+//import com.stereowalker.survive.world.item.CanteenItem;
 import com.stereowalker.survive.world.item.SItems;
 import com.stereowalker.survive.world.item.alchemy.SPotions;
 
@@ -16,7 +16,7 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
-
+/* 
 public class CharcoalFilterRecipe extends CustomRecipe {
 
 	public CharcoalFilterRecipe(ResourceLocation idIn) {
@@ -35,9 +35,9 @@ public class CharcoalFilterRecipe extends CustomRecipe {
 				waterBottle++;
 			} else if (stack.getItem() == Items.WATER_BUCKET) {
 				waterBottle++;
-			} else if (stack.getItem() == SItems.FILLED_CANTEEN && PotionUtils.getPotion(stack) == Potions.WATER && PotionUtils.getPotion(stack) != Potions.EMPTY) {
+			} else if  (stack.getItem() == SItems.FILLED_CANTEEN && PotionUtils.getPotion(stack) == Potions.WATER && PotionUtils.getPotion(stack) != Potions.EMPTY) {
 				waterBottle++;
-			} else if (stack.getItem() == SItems.WATER_BOWL) {
+			} else if  (stack.getItem() == SItems.WATER_BOWL) {
 				waterBottle++;
 			} else if (!stack.isEmpty()){
 				return false;
@@ -51,18 +51,18 @@ public class CharcoalFilterRecipe extends CustomRecipe {
 
 	@Override
 	public ItemStack assemble(CraftingContainer inv) {
-		for (int i = 0; i < inv.getContainerSize(); i++) {
+		 for (int i = 0; i < inv.getContainerSize(); i++) {
 			ItemStack stack = inv.getItem(i);
 			if (stack.getItem() == Items.POTION && PotionUtils.getPotion(stack) == Potions.WATER && PotionUtils.getPotion(stack) != Potions.EMPTY) {
 				return PotionUtils.setPotion(stack.copy(), SPotions.PURIFIED_WATER);
 			} else if (stack.getItem() == SItems.WATER_BOWL) {
 				return new ItemStack(SItems.PURIFIED_WATER_BOWL);
-			} else if (stack.getItem() == SItems.FILLED_CANTEEN && PotionUtils.getPotion(stack) == Potions.WATER && PotionUtils.getPotion(stack) != Potions.EMPTY) {
+			} (else if (stack.getItem() == SItems.FILLED_CANTEEN && PotionUtils.getPotion(stack) == Potions.WATER && PotionUtils.getPotion(stack) != Potions.EMPTY) {
 				return PotionUtils.setPotion(stack.copy(), SPotions.PURIFIED_WATER);
 			} else if (stack.getItem() == Items.WATER_BUCKET) {
 				return new ItemStack(SItems.PURIFIED_WATER_BUCKET);
 			}
-		}
+		} 
 		return ItemStack.EMPTY;
 	}
 
@@ -96,3 +96,4 @@ public class CharcoalFilterRecipe extends CustomRecipe {
 	}
 
 }
+*/

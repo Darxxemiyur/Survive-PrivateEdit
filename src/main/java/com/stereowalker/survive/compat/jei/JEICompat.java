@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.stereowalker.survive.Survive;
-import com.stereowalker.survive.world.item.CanteenItem;
+//import com.stereowalker.survive.world.item.CanteenItem;
 import com.stereowalker.survive.world.item.SItems;
 import com.stereowalker.survive.world.item.alchemy.SPotions;
 
@@ -25,7 +25,7 @@ import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.ShapelessRecipe;
 
-@JeiPlugin
+/*@JeiPlugin
 public class JEICompat implements IModPlugin {
 
 	@Override
@@ -67,4 +67,4 @@ public class JEICompat implements IModPlugin {
 		registration.useNbtForSubtypes(SItems.FILLED_CANTEEN);
 	}
 
-}
+} */

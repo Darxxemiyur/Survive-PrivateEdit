@@ -1,20 +1,6 @@
 package com.stereowalker.survive.world.item.crafting;
 
-import com.stereowalker.survive.Survive;
-import com.stereowalker.survive.world.item.CanteenItem;
-import com.stereowalker.survive.world.item.SItems;
-
-import net.minecraft.core.NonNullList;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.inventory.CraftingContainer;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.crafting.CustomRecipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.level.Level;
-
+/*
 public class CanteenFillingRecipe extends CustomRecipe {
 
 	public CanteenFillingRecipe(ResourceLocation idIn) {
@@ -94,3 +80,4 @@ public class CanteenFillingRecipe extends CustomRecipe {
 	}
 
 }
+*/

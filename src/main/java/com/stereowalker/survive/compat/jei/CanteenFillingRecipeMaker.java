@@ -1,22 +1,6 @@
 package com.stereowalker.survive.compat.jei;
 
-import java.util.List;
-
-import com.stereowalker.survive.Survive;
-import com.stereowalker.survive.world.item.CanteenItem;
-import com.stereowalker.survive.world.item.SItems;
-
-import mezz.jei.api.helpers.IStackHelper;
-import net.minecraft.core.NonNullList;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.crafting.CraftingRecipe;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.ShapelessRecipe;
-
+/* 
 public final class CanteenFillingRecipeMaker {
 	public static List<CraftingRecipe> createRecipes(IStackHelper stackHelper) {
 		String group = "survive.fill.canteen";
@@ -42,3 +26,4 @@ public final class CanteenFillingRecipeMaker {
 
 	}
 }
+ */

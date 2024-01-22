@@ -24,6 +24,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/*
 public class TemperatureData extends SurviveData {
 	private double temperatureLevel = 0;
 	private double displayTemperature = 0;
@@ -38,9 +39,9 @@ public class TemperatureData extends SurviveData {
 		this.temperatureLevel = Survive.DEFAULT_TEMP;
 	}
 
-	/**
-	 * Add water stats.
-	 */
+	
+	 //* Add water stats.
+	
 	public void addHeat(float heatLevel, double max) {
 		this.temperatureLevel = Math.min(this.temperatureLevel + heatLevel, max);
 	}
@@ -50,58 +51,58 @@ public class TemperatureData extends SurviveData {
 	}
 
 	private boolean addTemperature(ServerPlayer player, double temperature) {
-		if (Survive.TEMPERATURE_CONFIG.enabled) {
-			if (player.gameMode.isSurvival()) {
-				double defaultT = Survive.DEFAULT_TEMP;
-				double maxHeat1 = TemperatureUtil.firstHeat(player);
-				double maxHeat2 = TemperatureUtil.secondHeat(player);
-				double maxHeat3 = TemperatureUtil.maxHeat(player);
-				double maxCold1 = TemperatureUtil.firstCold(player);
-				double maxCold2 = TemperatureUtil.secondCold(player);
-				double maxCold3 = TemperatureUtil.maxCold(player);
+        if (!Survive.TEMPERATURE_CONFIG.enabled) {
+            this.temperatureLevel = Survive.DEFAULT_TEMP;
+			return false;
+        }
 
-				if (this.temperatureLevel > defaultT && this.temperatureLevel <= maxHeat1) {
-					if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature*1.5D);
-					else this.temperatureLevel = this.temperatureLevel+(temperature);
-				}
-				else if (this.temperatureLevel > maxHeat1 && this.temperatureLevel <= maxHeat2) {
-					if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature);
-					else this.temperatureLevel = this.temperatureLevel+(temperature/10.0D);
-				}
-				else if (this.temperatureLevel > maxHeat2 && this.temperatureLevel <= maxHeat3) {
-					if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature/10.0D);
-					else this.temperatureLevel = this.temperatureLevel+(temperature/100.0D);
-				}
-				else if (this.temperatureLevel > maxHeat3) {
-					if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature/100.0D);
-					else this.temperatureLevel = maxHeat3;
-				}
+        if (player.gameMode.isSurvival()) {
+            double defaultT = Survive.DEFAULT_TEMP;
+            double maxHeat1 = TemperatureUtil.firstHeat(player);
+            double maxHeat2 = TemperatureUtil.secondHeat(player);
+            double maxHeat3 = TemperatureUtil.maxHeat(player);
+            double maxCold1 = TemperatureUtil.firstCold(player);
+            double maxCold2 = TemperatureUtil.secondCold(player);
+            double maxCold3 = TemperatureUtil.maxCold(player);
 
-				else if (this.temperatureLevel < defaultT && this.temperatureLevel >= maxCold1) {
-					if (temperature > 0) this.temperatureLevel = this.temperatureLevel+(temperature*1.5D);
-					else this.temperatureLevel = this.temperatureLevel+(temperature);
-				}
-				else if (this.temperatureLevel < maxCold1 && this.temperatureLevel >= maxCold2) {
-					if (temperature > 0) this.temperatureLevel = this.temperatureLevel+(temperature);
-					else this.temperatureLevel = this.temperatureLevel+(temperature/10.0D);
-				}
-				else if (this.temperatureLevel < maxCold2 && this.temperatureLevel >= maxCold3) {
-					if (temperature > 0) this.temperatureLevel = this.temperatureLevel+(temperature/10.0D);
-					else this.temperatureLevel = this.temperatureLevel+(temperature/100.0D);
-				}
-				else if (this.temperatureLevel < maxCold3) {
-					if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature/100.0D);
-					else this.temperatureLevel = maxCold3;
-				}
-				else {
-					this.temperatureLevel = this.temperatureLevel+temperature;
-				}
-				return true;
-			}
-		} else {
-			this.temperatureLevel = Survive.DEFAULT_TEMP;
-		}
-		return false;
+            if (this.temperatureLevel > defaultT && this.temperatureLevel <= maxHeat1) {
+                if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature*1.5D);
+                else this.temperatureLevel = this.temperatureLevel+(temperature);
+            }
+            else if (this.temperatureLevel > maxHeat1 && this.temperatureLevel <= maxHeat2) {
+                if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature);
+                else this.temperatureLevel = this.temperatureLevel+(temperature/10.0D);
+            }
+            else if (this.temperatureLevel > maxHeat2 && this.temperatureLevel <= maxHeat3) {
+                if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature/10.0D);
+                else this.temperatureLevel = this.temperatureLevel+(temperature/100.0D);
+            }
+            else if (this.temperatureLevel > maxHeat3) {
+                if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature/100.0D);
+                else this.temperatureLevel = maxHeat3;
+            }
+            else if (this.temperatureLevel < defaultT && this.temperatureLevel >= maxCold1) {
+                if (temperature > 0) this.temperatureLevel = this.temperatureLevel+(temperature*1.5D);
+                else this.temperatureLevel = this.temperatureLevel+(temperature);
+            }
+            else if (this.temperatureLevel < maxCold1 && this.temperatureLevel >= maxCold2) {
+                if (temperature > 0) this.temperatureLevel = this.temperatureLevel+(temperature);
+                else this.temperatureLevel = this.temperatureLevel+(temperature/10.0D);
+            }
+            else if (this.temperatureLevel < maxCold2 && this.temperatureLevel >= maxCold3) {
+                if (temperature > 0) this.temperatureLevel = this.temperatureLevel+(temperature/10.0D);
+                else this.temperatureLevel = this.temperatureLevel+(temperature/100.0D);
+            }
+            else if (this.temperatureLevel < maxCold3) {
+                if (temperature < 0) this.temperatureLevel = this.temperatureLevel+(temperature/100.0D);
+                else this.temperatureLevel = maxCold3;
+            }
+            else {
+                this.temperatureLevel = this.temperatureLevel+temperature;
+            }
+            return true;
+        }
+        return false;
 	}
 
 	public void addModifier(TemperatureModifier modifier) {
@@ -136,9 +137,7 @@ public class TemperatureData extends SurviveData {
 		temp.save(entity);;
 	}
 
-	/**
-	 * Handles the temperature game logic.
-	 */
+	//Handles the temperature game logic.
 	public void tick(Player player) {
 		double calculatedTarget = Survive.DEFAULT_TEMP;
 		Arrays.asList(ContributingFactor.values()).forEach((f)->factors.put(f, 0.0));
@@ -209,9 +208,8 @@ public class TemperatureData extends SurviveData {
 		}
 	}
 
-	/**
-	 * Reads the water data for the player.
-	 */
+	///Reads the water data for the player.
+	//
 	public void read(CompoundTag compound) {
 		if (compound.contains("temperatureLevel", 99)) {
 			this.temperatureLevel = compound.getDouble("temperatureLevel");
@@ -232,10 +230,9 @@ public class TemperatureData extends SurviveData {
 		}
 	}
 
-	/**
-	 * Writes the water data for the player.
-	 */
-	public void write(CompoundTag compound) {
+	
+	 //* Writes the water data for the player.
+		public void write(CompoundTag compound) {
 		compound.putDouble("temperatureLevel", this.temperatureLevel);
 		compound.putDouble("targetTemperature", this.targetTemperature);
 		compound.putInt("temperatureTickTimer", this.temperatureTimer);
@@ -248,9 +245,8 @@ public class TemperatureData extends SurviveData {
 		compound.put("modifiers", modifiers);
 	}
 
-	/**
-	 * Get the player's water level.
-	 */
+	// Get the player's water level.
+	 //
 	public double getTemperatureLevel() {
 		return this.temperatureLevel;
 	}
@@ -278,3 +274,5 @@ public class TemperatureData extends SurviveData {
 		return Survive.TEMPERATURE_CONFIG.enabled;
 	}
 }
+
+*/

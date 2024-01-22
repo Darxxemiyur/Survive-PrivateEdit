@@ -56,7 +56,7 @@ public class SurviveRegistryEvents
 	@SubscribeEvent
 	@OnlyIn(Dist.CLIENT)
 	public static void registerItemColors(ColorHandlerEvent.Block event) {
-		event.getBlockColors().register((state, displayReader, blockPos, tintIndex) -> {
+		/*event.getBlockColors().register((state, displayReader, blockPos, tintIndex) -> {
 			return Survive.PURIFIED_WATER_COLOR;
 		}, SBlocks.PURIFIED_WATER, SBlocks.PURIFIED_WATER_CAULDRON);
 		event.getBlockColors().register((state, displayReader, blockPos, tintIndex) -> {
@@ -64,19 +64,19 @@ public class SurviveRegistryEvents
 		}, SBlocks.POTASH_CAULDRON);
 		event.getBlockColors().register((state, displayReader, blockPos, tintIndex) -> {
 			return PlatedTemperatureRegulatorBlock.getColor(state);
-		}, SBlocks.PLATED_TEMPERATURE_REGULATOR);
+		}, SBlocks.PLATED_TEMPERATURE_REGULATOR);*/
 	}
 	
 	@SubscribeEvent
 	@OnlyIn(Dist.CLIENT)
 	public static void registerItemColors(ColorHandlerEvent.Item event) {
-		event.getItemColors().register((stack, tintIndex) -> {
+		/*event.getItemColors().register((stack, tintIndex) -> {
 			return tintIndex > 0 ? -1 : PotionUtils.getPotion(stack) == SPotions.PURIFIED_WATER ? Survive.PURIFIED_WATER_COLOR : PotionUtils.getColor(stack);
 	      }, Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION);
 		event.getItemColors().register((stack, tintIndex) -> {
 			return TemperatureRegulatorPlateItem.getColor(stack);
 		}, SItems.LARGE_HEATING_PLATE, SItems.LARGE_COOLING_PLATE, SItems.MEDIUM_HEATING_PLATE, SItems.MEDIUM_COOLING_PLATE, SItems.SMALL_HEATING_PLATE, SItems.SMALL_COOLING_PLATE);
-	}
+	*/}
 
 	@SuppressWarnings("resource")
 	@SubscribeEvent
@@ -103,7 +103,8 @@ public class SurviveRegistryEvents
 		Survive.POTION_FLUID_MAP = 
 		new ImmutableMap.Builder<Potion, List<Fluid>>()
 		.put(Potions.WATER, Lists.newArrayList(Fluids.FLOWING_WATER, Fluids.WATER))
-		.put(SPotions.PURIFIED_WATER, Lists.newArrayList(SFluids.FLOWING_PURIFIED_WATER, SFluids.PURIFIED_WATER)).build();
+		//.put(SPotions.PURIFIED_WATER, Lists.newArrayList(SFluids.FLOWING_PURIFIED_WATER, SFluids.PURIFIED_WATER))
+		.build();
 	}
 
 	@SubscribeEvent

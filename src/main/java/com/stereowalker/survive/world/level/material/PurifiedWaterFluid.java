@@ -31,7 +31,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fluids.FluidAttributes;
-
+/*
 public abstract class PurifiedWaterFluid extends FlowingFluid {
 	@Override
 	public Fluid getFlowing() {
@@ -156,4 +156,4 @@ public abstract class PurifiedWaterFluid extends FlowingFluid {
 			return true;
 		}
 	}
-}
+} */

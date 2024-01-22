@@ -10,7 +10,7 @@ import com.stereowalker.survive.needs.HygieneData;
 import com.stereowalker.survive.needs.IRealisticEntity;
 import com.stereowalker.survive.needs.SleepData;
 import com.stereowalker.survive.needs.StaminaData;
-import com.stereowalker.survive.needs.WaterData;
+/*import com.stereowalker.survive.needs.WaterData;*/
 import com.stereowalker.survive.world.entity.ai.attributes.SAttributes;
 
 import net.minecraft.commands.CommandSourceStack;
@@ -103,7 +103,7 @@ public class NeedsCommand {
 		for(ServerPlayer player : pTargets) {
 			IRealisticEntity realisticPlayer = (IRealisticEntity)player;
 			SleepData sleepData = SurviveEntityStats.getSleepStats(player);
-			WaterData waterData = realisticPlayer.getWaterData();
+			/*WaterData waterData = realisticPlayer.getWaterData();*/
 			StaminaData staminaData = SurviveEntityStats.getEnergyStats(player);
 			HygieneData hygieneData = SurviveEntityStats.getHygieneStats(player);
 			switch (type)  {
@@ -122,15 +122,15 @@ public class NeedsCommand {
 			case SLEEP:
 				sleepData.addAwakeTime(player, -Mth.floor(amount));
 				break;
-			case THIRST:
+			/*case THIRST:
 				waterData.drink(Mth.floor(amount), 0, true);
 				break;
 			case HYDRATION:
 				waterData.drink(0, amount, true);
-				break;
+				break;*/
 			}
 			sleepData.save(player);
-			waterData.save(player);
+			/*waterData.save(player);*/
 			hygieneData.save(player);
 			staminaData.save(player);
 		}
@@ -147,7 +147,7 @@ public class NeedsCommand {
 		for(ServerPlayer player : pTargets) {
 			IRealisticEntity realisticPlayer = (IRealisticEntity)player;
 			SleepData sleepData = SurviveEntityStats.getSleepStats(player);
-			WaterData waterData = realisticPlayer.getWaterData();
+			/*WaterData waterData = realisticPlayer.getWaterData();*/
 			StaminaData staminaData = SurviveEntityStats.getEnergyStats(player);
 			HygieneData hygieneData = SurviveEntityStats.getHygieneStats(player);
 			switch (type)  {
@@ -166,15 +166,15 @@ public class NeedsCommand {
 			case SLEEP:
 				sleepData.addAwakeTime(player, Mth.floor(amount));
 				break;
-			case THIRST:
+			/*case THIRST:
 				waterData.setWaterLevel(waterData.getWaterLevel()-Mth.floor(amount));
 				break;
 			case HYDRATION:
 				waterData.setWaterHydrationLevel(waterData.getHydrationLevel()-Mth.floor(amount));
-				break;
+				break;*/
 			}
 			sleepData.save(player);
-			waterData.save(player);
+			/*waterData.save(player);*/
 			hygieneData.save(player);
 			staminaData.save(player);
 		}
@@ -209,13 +209,13 @@ public class NeedsCommand {
 		case SLEEP:
 			result = sleepData.getAwakeTimer();
 			break;
-		case THIRST:
+		/*case THIRST:
 			result = realisticPlayer.getWaterData().getWaterLevel();
 			break;
 		case HYDRATION:
 			result = realisticPlayer.getWaterData().getHydrationLevel();
 			break;
-		}
+		*/}
 
 		source.sendSuccess(new TranslatableComponent("commands.needs.query."+type.getSerializedName(), pTarget.getDisplayName(), result), true);
 		return Mth.floor(result);

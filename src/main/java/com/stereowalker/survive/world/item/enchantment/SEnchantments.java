@@ -10,23 +10,24 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 import net.minecraftforge.registries.IForgeRegistry;
 
+
 public class SEnchantments {
 	public static List<Enchantment> ENCHANTMENTS = new ArrayList<Enchantment>();
 	
-	public static final Enchantment WARMING = registerTempe("warming", new TempControlEnchantment(Rarity.UNCOMMON, new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
+	/*public static final Enchantment WARMING = registerTempe("warming", new TempControlEnchantment(Rarity.UNCOMMON, new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
 	public static final Enchantment COOLING = registerTempe("cooling", new TempControlEnchantment(Rarity.UNCOMMON, new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
 	public static final Enchantment ADJUSTED_WARMING = registerTempe("adjusted_warming", new AutoTempControlEnchantment(Rarity.VERY_RARE, new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
 	public static final Enchantment ADJUSTED_COOLING = registerTempe("adjusted_cooling", new AutoTempControlEnchantment(Rarity.VERY_RARE, new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
-	public static final Enchantment FEATHERWEIGHT = registerStami("featherweight", new FeatherweightEnchantment(Rarity.UNCOMMON, new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
+	*/public static final Enchantment FEATHERWEIGHT = registerStami("featherweight", new FeatherweightEnchantment(Rarity.UNCOMMON, new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
 	public static final Enchantment WEIGHTLESS = registerStami("weightless", new WeightlessEnchantment(Rarity.VERY_RARE, new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
 	
-	public static Enchantment registerTempe(String name, Enchantment enchantment) {
+	/*public static Enchantment registerTempe(String name, Enchantment enchantment) {
 		if (Survive.TEMPERATURE_CONFIG.enabled) {
 			return register(name, enchantment);
 		} else {
 			return enchantment;
 		}
-	}
+	}*/
 	
 	public static Enchantment registerStami(String name, Enchantment enchantment) {
 		if (Survive.STAMINA_CONFIG.enabled) {

@@ -58,6 +58,7 @@ public abstract class GuiMixin extends GuiComponent {
 
 	@Redirect(method = "renderHotbar", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;setShaderColor(FFFF)V", ordinal = 0))
 	public void hotbarColor(float x, float y, float z, float a) {
+		/*
 		Player playerentity = this.getCameraPlayer();
 		if (Survive.TEMPERATURE_CONFIG.enabled && Survive.TEMPERATURE_CONFIG.tempDisplayMode.equals(TempDisplayMode.HOTBAR)) {
 			double rawTemperature = SurviveEntityStats.getTemperatureStats(playerentity).getTemperatureLevel();
@@ -90,9 +91,9 @@ public abstract class GuiMixin extends GuiComponent {
 			RenderSystem.setShaderColor(coldTemp, whiteTemp, heatTemp, 1.0F);
 		} else {
 			RenderSystem.setShaderColor(x, y, z, a);
-		}
+		} */
 	}
-
+/*
 	@Inject(method = "renderPlayerHealth", at = @At(value = "INVOKE", shift = Shift.AFTER, target = "Lnet/minecraft/util/profiling/ProfilerFiller;pop()V"), locals = LocalCapture.CAPTURE_FAILHARD)
 	public void addThirstAndOthers(PoseStack pPoseStack, CallbackInfo ci, Player player, int i, boolean flag, long j, int k, FoodData fooddata, int l, int i1, int j1, int k1, float f, int l1, int i2, int j2, int k2, int l2, int i3, int j3, LivingEntity livingentity, int k5, int l5, int i6) {
 		RenderSystem.enableBlend();
@@ -114,7 +115,7 @@ public abstract class GuiMixin extends GuiComponent {
 			RenderSystem.blendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
 		}
 	}
-
+ */
 
 	@Inject(method = "renderHearts", at = @At(value = "HEAD"), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
 	public void changeHearts(PoseStack p_168689_, Player p_168690_, int p_168691_, int p_168692_, int p_168693_, int p_168694_, float p_168695_, int p_168696_, int p_168697_, int p_168698_, boolean p_168699_, CallbackInfo ci) {

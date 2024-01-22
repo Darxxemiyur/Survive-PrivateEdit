@@ -13,7 +13,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 
-public class WellbeingData extends SurviveData {
+/*public class WellbeingData extends SurviveData {
 
 	public boolean isWell;
 	public int timeUntilUnwell = 0;
@@ -21,11 +21,11 @@ public class WellbeingData extends SurviveData {
 	public int timeUntilHypothermia;
 	public int timeUntilHyperthermia;
 
-	/**
-	 * Sets the time (in ticks) before the player becomes unwell
-	 * @param min - The minimum amount of ticks
-	 * @param max - The maximum amount of ticks
-	 */
+ 
+	 //* Sets the time (in ticks) before the player becomes unwell
+	 //* @param min - The minimum amount of ticks
+	 //* @param max - The maximum amount of ticks
+	 
 	public void setTimer(int min, int max) {
 		if (this.timeUntilUnwell == 0 && this.isWell && this.shouldTick())
 			this.timeUntilUnwell = min+this.rng.nextInt(max-min);
@@ -69,7 +69,7 @@ public class WellbeingData extends SurviveData {
 			this.isWell = true;
 			this.timeUntilWell = 0;
 		}
-
+/*
 		//This should be logic for hypothermia
 		if (!Survive.TEMPERATURE_CONFIG.useLegacyTemperatureSystem && Survive.TEMPERATURE_CONFIG.enabled) {
 			TemperatureData data = SurviveEntityStats.getTemperatureStats(player);
@@ -111,7 +111,7 @@ public class WellbeingData extends SurviveData {
 			if (this.timeUntilHypothermia <= 0) {
 				if (!player.hasEffect(SMobEffects.HYPOTHERMIA))player.addEffect(new MobEffectInstance(SMobEffects.HYPOTHERMIA, 6000));
 			}
-		}
+		} 
 	}
 
 	@Override
@@ -144,4 +144,4 @@ public class WellbeingData extends SurviveData {
 		return Survive.WELLBEING_CONFIG.enabled;
 	}
 
-}
+} */
